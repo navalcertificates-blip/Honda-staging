@@ -1,28 +1,104 @@
 
 <html>
   <head>
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		
+		body{
+			--space: 1rem;
+			min-height: 90vh;
+			display: grid;
+			align-content: center;
+			overflow: hidden;
+			gap: var(--space);
+			width:100%;
+			font-size: 1.5rem;
+			line-height: 1;
+		}
+		
+		.marquee{
+			--duration: 10s;
+			--gap: var(--space);
+			display: flex;
+			overflow: hidden;
+			user-select: none;
+			gap: var(--gap);
+		}
+		
+		.marquee__group{
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			gap: var(--gap);
+			min-width:100%;
+			animation: scroll var(--duration) linear infinite;			
+		}
+		
+		@media (prefers-reduced-motion:reduce){
+			.marquee__group{
+				animation-play-state:paused;
+			}
+		}
+		
+		.marquee__group img{
+			aspect-ratio:1;
+			object-fit:cover;
+			border-radius: 1rem;
+			border: 1px solid #ccc
+			padding: 3rem;
+		}
+		
+		@keyframes scroll{
+			0%{
+				transform: transLatex(0)
+			}
+			100%{
+				transform: transLatex(calc(-100% - var(--gap)));
+			}
+		}
+	</style>
     <title>
       Om Honda
     </title>    
   </head>
   <body>
-    <H1 style="background-color: #2b2301; color: #fff;">
+    <H2 style="background-color: #2b2301; color: #fff;">
 		<br/>
-		<center> Welcome to Om Honda Family</center>
+		<center> ओम होण्डा परिवार में आपका स्वागत है </center>
 		<br/>
     </H1>
+	
+	<div class="marquee">
+		<div class="marquee__group">
+			<img src="./Image1.jpeg" alt="Word to html"  width ="50%" height = "500" />
+			<img src="./Image2.jpeg" alt="Word to html"  width ="50%" height = "500" />
+			<img src="./Image 3.jpeg" alt="Word to html"  width ="50%" height = "500" />
+		</div>
+		
+		<div aria-hidden="true" class="marquee__group">
+			<img src="./Image1.jpeg" alt="Word to html"  width ="50%" height = "500" />
+			<img src="./Image2.jpeg" alt="Word to html"  width ="50%" height = "500" />
+			<img src="./Image 3.jpeg" alt="Word to html"  width ="50%" height = "500" />
+	</div>
+	</div>
+	
 	<table width="100%">
 		<tr>
-			<td> <center> <img src="./Image1.jpeg" alt="Word to html"  width ="90%" height = "500" /></center> </td>
-		</tr>
-		<tr>
-			<td> <center> <img src="./Image2.jpeg" alt="Word to html"  width ="90%" height = "500" /></center> </td>
-		</tr>
-		<tr>
-			<td> <center> <img src="./Image 3.jpeg" alt="Word to html"  width ="90%" height = "500" /></center> </td>
-		</tr>
+			<td>
+				ओम होण्डा, <br/>
+				दोंदे, रायपुर (छ ग)
+			</td>
+			<td></td>
+			<td align-conten="right">
+				जय प्रकाश वर्मा, </br>
+				62613-57075</br>
+				62662-05528</br>
+				99775-44236</br>
+			</td>
+		</tr>		
 	</table>
-	
-	
   </body>
 </html>
